@@ -4,6 +4,7 @@
 package myset.exercise
 
 import kotlin.test.Test
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class MySetTest {
@@ -12,5 +13,12 @@ class MySetTest {
         val mySet = MySet()
         val result = mySet.isEmpty()
         assertTrue(result)
+    }
+    @Test
+    fun `isEmpty returns false when not empty`() {
+        val mySet = MySet()
+        mySet.add("a")
+        val result = mySet.isEmpty()
+        assertFalse(result)
     }
 }

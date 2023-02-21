@@ -4,7 +4,12 @@
 package myset.exercise
 
 class MySet {
+    private var isEmpty = true
     fun isEmpty(): Boolean {
-        return true
+        return isEmpty
+    }
+
+    fun add(element: String) {
+        isEmpty = false
     }
 }
