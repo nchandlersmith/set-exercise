@@ -5,11 +5,14 @@ package myset.exercise
 
 class MySet {
     private var isEmpty = true
+    var size = 0
+    private set
     fun isEmpty(): Boolean {
         return isEmpty
     }
 
     fun add(element: String) {
         isEmpty = false
+        size++
     }
 }

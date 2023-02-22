@@ -4,6 +4,7 @@
 package myset.exercise
 
 import kotlin.test.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -20,5 +21,20 @@ class MySetTest {
         mySet.add("a")
         val result = mySet.isEmpty()
         assertFalse(result)
+    }
+    @Test
+    fun `size returns 0 for empty set`() {
+        val mySet = MySet()
+        val result = mySet.size
+        assertEquals(0, result)
+    }
+    @Test
+    fun `size returns 1 for set with 1 element`() {
+        val mySet = MySet()
+        mySet.add("a")
+
+        val result = mySet.size
+
+        assertEquals(1, result)
     }
 }
