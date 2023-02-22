@@ -37,4 +37,28 @@ class MySetTest {
 
         assertEquals(1, result)
     }
+    @Test
+    fun `contains a returns true for set with a element`() {
+        val mySet = MySet()
+        mySet.add("a")
+
+        val result = mySet.contains("a")
+
+        assertTrue(result)
+    }
+    @Test
+    fun `contains a returns false empty set`() {
+        val mySet = MySet()
+        val result = mySet.contains("a")
+        assertFalse(result)
+    }
+    @Test
+    fun `contains a returns false for a nonempty set without an a element`() {
+        val mySet = MySet()
+        mySet.add("b")
+
+        val result = mySet.contains("a")
+
+        assertFalse(result)
+    }
 }

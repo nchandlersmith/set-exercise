@@ -7,12 +7,22 @@ class MySet {
     private var isEmpty = true
     var size = 0
     private set
+    var setValue:  Array<String?> = arrayOfNulls<String>(10)
     fun isEmpty(): Boolean {
         return isEmpty
     }
 
     fun add(element: String) {
         isEmpty = false
+        setValue[size] = element
         size++
+    }
+
+    fun contains(element: String): Boolean {
+        for (index in 0 until size) {
+            if (setValue[index] == element)
+                return true
+        }
+        return false
     }
 }
