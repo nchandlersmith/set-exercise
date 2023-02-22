@@ -4,16 +4,14 @@
 package myset.exercise
 
 class MySet {
-    private var isEmpty = true
     var size = 0
     private set
     var setValue:  Array<String?> = arrayOfNulls<String>(10)
     fun isEmpty(): Boolean {
-        return isEmpty
+        return size == 0
     }
 
     fun add(element: String) {
-        isEmpty = false
         setValue[size] = element
         size++
     }
