@@ -6,7 +6,7 @@ package myset.exercise
 class MySet {
     var size = 0
     private set
-    var setValue:  Array<String?> = arrayOfNulls<String>(10)
+    var setValue:  Array<String?> = arrayOfNulls(10)
     fun isEmpty(): Boolean {
         return size == 0
     }
