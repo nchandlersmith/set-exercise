@@ -66,8 +66,8 @@ class MySetTest {
 
         mySet.remove("a")
 
-        assertEquals("b", mySet.setValue[0])
-        assertEquals(null, mySet.setValue[1]) // would rather test implementation than use prod code
+        assertEquals("b", mySet.setValue[0]) // would rather test implementation than use prod code
+        assertEquals(null, mySet.setValue[1])
     }
     @Test
     fun `remove reduces size by 1`() {

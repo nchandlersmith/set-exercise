@@ -18,20 +18,25 @@ class MySet {
     }
 
     fun contains(element: String): Boolean {
-        for (index in 0 until size) {
-            if (setValue[index] == element)
-                return true
-        }
-        return false
+        return findElement(element) > -1
     }
 
     fun remove(element: String) {
-        for (index in  0 until size) {
+        val index = findElement(element)
+        if (index < 0) {
+            return
+        }
+        setValue[index] = setValue[size - 1]
+        setValue[size - 1] = null
+        size--
+    }
+
+    private fun findElement(element: String): Int {
+        for (index in 0 until size) {
             if (setValue[index] == element) {
-                setValue[index] = setValue[size - 1]
-                setValue[size - 1] = null
-                size--
+                return index
             }
         }
+        return -1
     }
 }
