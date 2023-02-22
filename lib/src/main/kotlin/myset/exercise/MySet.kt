@@ -13,6 +13,10 @@ class MySet {
     }
 
     fun add(element: String) {
+        val elementFound = findElement(element) > -1
+        if (elementFound) {
+            return
+        }
         setValue[size] = element
         size++
     }

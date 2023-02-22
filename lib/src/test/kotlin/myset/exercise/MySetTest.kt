@@ -91,4 +91,13 @@ class MySetTest {
         assertEquals("a", mySet.setValue[0])
         assertEquals("b", mySet.setValue[1])
     }
+    @Test
+    fun `remove does not add element already in set`() {
+        val mySet = MySet()
+        mySet.add("a")
+
+        mySet.add("a")
+
+        assertEquals(1, mySet.size) // would rather test implementation than use prod code
+    }
 }
