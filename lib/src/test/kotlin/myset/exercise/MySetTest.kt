@@ -3,10 +3,7 @@
  */
 package myset.exercise
 
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class MySetTest {
     @Test
@@ -38,7 +35,7 @@ class MySetTest {
         assertEquals(1, result)
     }
     @Test
-    fun `contains a returns true for set with a element`() {
+    fun `contains 'a' returns true for set with a element`() {
         val mySet = MySet()
         mySet.add("a")
 
@@ -47,18 +44,51 @@ class MySetTest {
         assertTrue(result)
     }
     @Test
-    fun `contains a returns false empty set`() {
+    fun `contains 'a' returns false empty set`() {
         val mySet = MySet()
         val result = mySet.contains("a")
         assertFalse(result)
     }
     @Test
-    fun `contains a returns false for a nonempty set without an a element`() {
+    fun `contains 'a' returns false for a nonempty set without an 'a' element`() {
         val mySet = MySet()
         mySet.add("b")
 
         val result = mySet.contains("a")
 
         assertFalse(result)
+    }
+    @Test
+    fun `remove 'a' removes 'a' from the set`() {
+        val mySet = MySet()
+        mySet.add("a")
+        mySet.add("b")
+
+        mySet.remove("a")
+
+        assertEquals("b", mySet.setValue[0])
+        assertEquals(null, mySet.setValue[1]) // would rather test implementation than use prod code
+    }
+    @Test
+    fun `remove reduces size by 1`() {
+        val mySet = MySet()
+        mySet.add("a")
+        mySet.add("b")
+
+        mySet.remove("a")
+
+        assertEquals(1, mySet.size) // would rather test implementation than use prod code
+    }
+    @Test
+    fun `remove does not delete element that does not exist`() {
+        val mySet = MySet()
+        mySet.add("a")
+        mySet.add("b")
+
+        mySet.remove("element does not exist")
+
+        assertEquals(2, mySet.size) // would rather test implementation than use prod code
+        assertEquals("a", mySet.setValue[0])
+        assertEquals("b", mySet.setValue[1])
     }
 }

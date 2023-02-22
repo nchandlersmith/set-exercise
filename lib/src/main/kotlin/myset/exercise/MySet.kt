@@ -7,6 +7,7 @@ class MySet {
     var size = 0
     private set
     var setValue:  Array<String?> = arrayOfNulls(10)
+    private set
     fun isEmpty(): Boolean {
         return size == 0
     }
@@ -22,5 +23,15 @@ class MySet {
                 return true
         }
         return false
+    }
+
+    fun remove(element: String) {
+        for (index in  0 until size) {
+            if (setValue[index] == element) {
+                setValue[index] = setValue[size - 1]
+                setValue[size - 1] = null
+                size--
+            }
+        }
     }
 }
